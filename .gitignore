@@ -1,2 +1,4 @@
 /build
 /*.tmp
+gradle.properties
+/.nb-gradle/
