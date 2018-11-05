@@ -11,6 +11,9 @@ apply plugin: 'java'
 apply plugin: 'jacoco' 
 // Apply the application plugin to add support for building an application
 apply plugin: 'application'
+apply plugin: 'checkstyle'
+
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -47,4 +50,10 @@ jacocoTestReport {
                     exclude: ['main/**'])
         })
     }
+}
+
+
+
+run {
+    standardInput = System.in
 }
