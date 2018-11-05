@@ -10,14 +10,15 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class VarastoTest {
 
+public class VarastoTest {
+    
     Varasto varasto;
     double vertailuTarkkuus = 0.0001;
-
+    static int testSize=10;
     @Before
     public void setUp() {
-        varasto = new Varasto(10);
+        varasto = new Varasto(testSize);
     }
     @Test
     public void eiOtaVirheellistaTilavuutta(){
@@ -28,11 +29,11 @@ public class VarastoTest {
     }
     @Test
     public void konstruktoriOsaaLaittaaAlkusaldon(){
-        varasto= new Varasto(10, 10);
+        varasto= new Varasto(testSize, testSize);
         assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
-        varasto= new Varasto(10, -10);
+        varasto= new Varasto(testSize, -testSize);
         assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
-        varasto= new Varasto(10, 20);
+        varasto= new Varasto(testSize, 2*testSize);
         assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
     }
     @Test
